@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="scss/mixins/_reset-text.scss">
+
+    <script type="text/javascript">
+
+        function calculate() { //Create calculate function
+
+            var val1, val2, operator, ans;
+
+            val1 = Number(document.form.num1.value);
+            val2 = Number(document.form.num2.value);
+            operator = document.getElementById('ope').value;
+
+            if (operator === '+') {
+                ans = val1 + val2;//Addition
+            } else if (operator === '-') {
+                ans = val1 - val2; //Substraction
+            } else if (operator === '*') {
+                ans = val1 * val2; //Multiplication
+            } else if (operator === '/') {
+                ans = val1 / val2; //Division
+            } else {
+                alert('Please Enter number');
+            }
+            document.getElementById('ans').value = ans;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <form name="form">
+
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-md-12">
+                    <h2>Javascript Calculator</h2>
+                </div>
+            </div>
+
+            <div class="row menu">
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <label for="num1">Number1</label><br>
+                    <input type="number" name="num1" required>
+                </div>
+
+                <div class="col-lg-4 col-sm-12 col-md-4 dropdown">
+                    <label>Operator</label><br>
+                    <select name="Operator" id="ope">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-4 col-sm-12 col-md-4">
+                    <label>Number2</label><br>
+                    <input type="number" name="num2" required> 
+                </div>
+            </div>
+           
+
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-md-12 mt-4">
+                    <button class="btn btn-primary w-100" id="btn1" onclick="calculate()">Submit</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-md-12 text-center">
+                    <label>Answer</label><br>
+                    <input type="text" id="ans" readonly="">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+

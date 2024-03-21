@@ -1,0 +1,18 @@
+.container{
+    border: 1px solid white; 
+    margin-top: 15%;
+}
+
+h2{
+    padding: 5px 5px;
+    text-align: center;
+    background-color: azure;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
